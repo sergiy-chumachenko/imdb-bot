@@ -8,7 +8,7 @@ imdb = IMDBProvider()
 
 @bot.message_handler(commands=['get_movie_info'])
 def get_movie_title(message):
-    msg = bot.reply_to(message, 'What movie are you interested in?\nFormat -> title,year')
+    msg = bot.reply_to(message, 'What movie are you interested in?\nFormat -> title-year')
     bot.register_next_step_handler(message=msg, callback=send_movie_info)
 
 
