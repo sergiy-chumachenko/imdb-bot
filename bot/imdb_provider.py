@@ -27,11 +27,11 @@ class IMDBProvider(object):
         """
         Get movie request as a string, transform and return it as a dict
         """
-        lst = string.split(',')
-        data = dict(title=lst[0])
+        lst = string.split('-')
+        data = dict(title=lst[0].strip())
         if len(lst) > 1:
             try:
-                year = int(lst[1])
+                year = int(lst[1].strip())
             except ValueError:
                 year = None
         else:
